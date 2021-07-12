@@ -1,4 +1,4 @@
-//파일을 읽어오기 위해 Node.js의 built-in file system module인 fs를 썼다.
+//방법 1.파일을 읽어오기 위해 Node.js의 built-in file system module인 fs를 썼다.
 var fs = require('fs');
 
 // input을 읽어와서 변수로 선언&할당한다.
@@ -15,3 +15,4 @@ var b = parseInt(input[1]);
 
 // 사실상 여기서부터 구현부라고 보시면 되겠다.
 console.log(a+b);
+//방법2.
