@@ -1,10 +1,7 @@
 import sys
-sum = []
-while(True):
-	A = sum(map(int, sys.stdin.readline().split()))
-	if(A==0):
-		break
-	else:
-		sum.append(A)
-	for _ in range(len(sum)-1):
-		print(A)
+num = sys.stdin.readline()
+print(num)
+for _ in range(num):
+	A, B = int(sys.stdin.readline().rstrip())
+	print(A)
+	print(B)
