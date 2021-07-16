@@ -1,12 +1,12 @@
-import sys
-month, day = map(int, sys.stdin.readline().split())
-end_day = 0
-add_days = 0
-def calculate_2007(add_days):
+#월과 일을 입력받고 그 때까지의 일 수를 7로 나눠서 1이면 월 ~ 0이면 일
+month, day = map(int, input().strip().split())
+#일 수의 총합
+total_days = 0
+def day_of_the_week_2007(add_days):
 	if(add_days==1):
 		print('MON')
 	elif(add_days==2):
-		print('Tue')
+		print('TUE')
 	elif(add_days==3):
 		print('WED')
 	elif(add_days==4):
@@ -17,21 +17,12 @@ def calculate_2007(add_days):
 		print('SAT')
 	elif(add_days==0):
 		print('SUN')
-if(month==1,3,5,7,8,10,12):
-	end_day=31
-	add_days = end_day+day
-	print(add_days)
-	answer = add_days%7
-	print(month, day)
-	print(answer)
-	calculate_2007(add_days = add_days%7)
-elif(month==2):
-	end_day=28
-	add_days = end_day+day
-	calculate_2007(add_days%7)
-elif(month==4,6,9,11):
-	end_day=30
-	add_days = end_day+day
-	calculate_2007(add_days%7)
-else:
-	print("error: 1~12사이의 숫자를 입력해주세요")
+for i in range(1, month):
+	if(i==1 or i==3 or i==5 or i==7 or i==8 or i==10 or i==12):
+		total_days+=31
+	elif(i==2):
+		total_days+=28
+	elif(i==4 or i==6 or i==9 or i==11):
+		total_days+=30
+answer = (total_days+day)%7
+day_of_the_week_2007(answer)

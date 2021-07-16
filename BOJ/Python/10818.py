@@ -1,0 +1,5 @@
+repeat = int(input())
+num_list = list(map(int,input().split()))
+min_value = min(num_list)
+max_value = max(num_list)
+print(f'{min_value} {max_value}')
