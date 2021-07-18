@@ -1,6 +1,5 @@
 input_num = int(input())
-for i in range(1,input_num*2):
-	if(i<=input_num):
-		print(" "*i+"*"*(input_num-i)+"*"*(input_num-i-1))
-	if(i>input_num):
-		print(" "*(input_num-(i-input_num+1))+"*"*(i-input_num+1)+"*"*(i-input_num))
+for i in range(input_num):
+	print(' ' * i + '*' * (2 * (input_num - i) - 1))
+for j in range(1, input_num):
+	print(' ' * (input_num - j - 1) + '*' * (2 * j + 1))
