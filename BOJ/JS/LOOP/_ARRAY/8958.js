@@ -1,3 +1,4 @@
+//OX퀴즈
 const readline = require('readline');
 const rl = readline.createInterface({
 	input: process.stdin,
@@ -19,9 +20,9 @@ rl.on('line',(line) => {
 				count++;
 			}else{
 				count=0;
-			}	
-		}
+			};	
+		};
 		console.log(sum);
-	}
+	};
 	process.exit();
 });
