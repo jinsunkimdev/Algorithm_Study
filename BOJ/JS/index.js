@@ -11,3 +11,17 @@ rl.on('resume', () => {
 //한 줄일 때
 /*var fs = require('fs');
 var input = fs.readFileSync('/dev/stdin').toString().split(' '); */
+/**
+'use strict';
+const readline = require('readline');
+const rl =readline.createInterface({
+	input: process.stdin,
+	output: process.stdout
+});
+inputArr = [];
+rl.on('line', (line) => {
+
+}).on('close', () => {
+
+	process.exit();
+}); */
