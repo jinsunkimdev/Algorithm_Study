@@ -1,3 +1,4 @@
+//croatia alphabet
 'use strict';
 const readline = require('readline');
 const rl =readline.createInterface({
@@ -13,8 +14,8 @@ rl.on('line', (line) => {
 	const solution = (inputStr) => {
 	for (let alphabet of croatiaWords) {
 		inputStr = inputStr.split(alphabet).join("S");
-		console.log(inputStr);
 	}
+	console.log(inputStr);
 	return inputStr.length; 
 	}
 	console.log(solution(inputStr));
