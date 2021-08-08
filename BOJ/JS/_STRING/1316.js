@@ -26,6 +26,7 @@ rl.on('line', (line) => {
 			}
 			console.log(charMap);
 		}
+		console.log(`total=${charMap}`);
 	}
 	console.log(answer);
 	process.exit();
