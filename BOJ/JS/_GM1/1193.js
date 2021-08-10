@@ -8,20 +8,21 @@ const rl =readline.createInterface({
 let inputNum = 0;
 rl.on('line', (line) => {
 	inputNum = Number(line);
+	rl.close();
 }).on('close', () => {
 	let value = 1;
 while (true) {
-	number -= value;
-	if (number <= 0) {
-		number += value;
+	inputNum -= value;
+	if (inputNum<= 0) {
+		inputNum+= value;
 		break;
 	}
 	value++;
 }
-if (value % 2 === 1) {
-	console.log(`${value - (number - 1)}/${1 + (number - 1)}`);
-} else {
-	console.log(`${1 + (number - 1)}/${value - (number - 1)}`);
+if (value % 2 === 1) {//나머지 1은  홀수
+	console.log(`${value - (inputNum - 1)}/${1 + (inputNum - 1)}`);
+} else {//짝수
+	console.log(`${1 + (inputNum - 1)}/${value - (inputNum - 1)}`);
 }
 	process.exit();
 });
