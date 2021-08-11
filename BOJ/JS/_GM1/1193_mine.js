@@ -22,13 +22,15 @@ rl.on('line', (line) => {
 				break;
 			}
 		}
+		console.log(`line=${line}, inputNum=${inputNum}`);
 		for(let i=1; i<line; i++){
 			inputNum -= i;
 		}//inputNum을 인덱스 1부터 시작하도록 감소시킴
-		if(line%2 == 1){
+		console.log(`2line=${line}, inputNum=${inputNum}`);
+		if(line%2 == 1){// 홀수면 분모 오름차순, 분자 내림차순
 			console.log(line-(inputNum-1) + "/" + inputNum);
-		}else{
-			console.log(inputNum + "/" + (line - (number -1)));
+		}else{// 짝수면 분모 내림차순, 분자 오름차순
+			console.log(inputNum + "/" + (line - (inputNum-1)));
 		}
 	}
 	solve();
