@@ -20,16 +20,18 @@ rl.on("line", (line) => {
     k.push(inputArrNum.shift());
     n.push(inputArrNum.shift());
   }
+  let knArray = [];
   knArray.push(k, n);
   let floor = [];
   let sum = 0;
   for (let i = 0; i < knArray.length; i++) {
     k = knArray[i][0];
     n = knArray[i][1];
+    console.log(`k=${k}, n=${n}`);
     for (let j = 0; j <= k; j++) {
       floor[j] = [];
       for (let m = 1; m <= n; m++) {
-        if (j == 0) {
+        if (j === 0) {
           floor[j].push(m);
         } else {
           sum += floor[j - 1][m - 1];
