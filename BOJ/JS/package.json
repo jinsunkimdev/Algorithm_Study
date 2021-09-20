@@ -4,8 +4,12 @@
   "description": "nodejs package for solve BOJ problems by javascript",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jinsun Kim",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }

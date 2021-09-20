@@ -1,27 +1,12 @@
-// entry point 
-//여러 줄일 때
-/*import readline from 'readline';
-const rl = readline.createInterface({
-	input: process.stdin,
-	output: process.stdout
+"use strict";
+import readline from "readline";
+const readline = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
 });
-rl.on('resume', () => {
-	console.log('Readline Resumed');
-});*/
-//한 줄일 때
-/*var fs = require('fs');
-var input = fs.readFileSync('/dev/stdin').toString().split(' '); */
-/**
-'use strict';
-const readline = require('readline');
-const rl =readline.createInterface({
-	input: process.stdin,
-	output: process.stdout
+let inputArr = [];
+rl.on("line", (line) => {
+  inputArr.push(Number(line));
+}).on("close", () => {
+  console.log(inputArr);
 });
-inputArr = [];
-rl.on('line', (line) => {
-
-}).on('close', () => {
-
-	process.exit();
-}); */
