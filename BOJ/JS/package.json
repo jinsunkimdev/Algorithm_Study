@@ -2,14 +2,16 @@
   "name": "bojs",
   "version": "1.0.0",
   "description": "nodejs package for solve BOJ problems by javascript",
-  "main": "index.js",
   "scripts": {
-    "start": "nodemon node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec babel-node _GM2/1929"
   },
   "author": "Jinsun Kim",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
     "nodemon": "^2.0.12"
   }
 }

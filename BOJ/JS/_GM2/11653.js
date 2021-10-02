@@ -24,7 +24,7 @@ rl.on("line", (line) => {
     for (let i = 1; i < aliquotArr.length; i++) {
       while (true) {
         if (otherInputNum % aliquotArr[i] === 0) {
-          otherInputNum = otherInutNum / aliquotArr[i];
+          otherInputNum = otherInputNum / aliquotArr[i];
           console.log(aliquotArr[i]);
         } else break;
       }
