@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "nodejs package for solve BOJ problems by javascript",
   "scripts": {
-    "dev": "nodemon --exec babel-node _GM2/1929"
+    "dev": "nodemon --exec babel-node _GM2/9020"
   },
   "author": "Jinsun Kim",
   "license": "MIT",
