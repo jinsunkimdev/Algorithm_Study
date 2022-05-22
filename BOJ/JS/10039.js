@@ -1,20 +1,16 @@
 "use strict";
-const readline = require("readline");
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-let inputArr = [];
-rl.on("line", (line) => {
-  inputArr.push(Number(line));
-}).on("close", () => {
-  let sum = 0;
-  for (let i = 0; i < inputArr.length; i++) {
-    if (inputArr[i] < 40) {
-      inputArr[i] = 40;
-    }
-    sum += inputArr[i];
-  }
-  console.log(Math.floor(sum / 5));
-  process.exit();
-});
+let input = []
+require('readline')
+    .createInterface(process.stdin, process.stdout)
+    .on('line', (line) => {
+      input = line
+              .trim()
+              .split(" ")
+              .map((num) => parseInt(num))
+    })
+    .on('close', () => {
+      const N = input.shift()
+      const M = input.shift()
+      console.log(`N=${N}`)
+      console.log(`M=${M}`)
+    })
