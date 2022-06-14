@@ -1,3 +1,4 @@
+// 상근이 숫자 카드
 const input = []
 let numList = undefined
 // String to Number
