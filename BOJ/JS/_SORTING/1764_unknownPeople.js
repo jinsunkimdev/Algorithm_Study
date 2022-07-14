@@ -8,19 +8,19 @@ require('readline').createInterface(process.stdin, process.stdout)
 	const [N, M] = input.shift().split(' ').map(v => +v)
 	const nameArr = input
 	const neverHeard = nameArr.slice(0, N) 
+	const nhSet = new Set()
+	neverHeard.forEach(v => nhSet.add(v))
 	const neverSeen = nameArr.slice(N + 1)
-	const matchMap = new Map()
-	const answer = []
-	neverHeard.forEach(v => {
-		matchMap.set(v, 1)
-	})
-	neverSeen.forEach(v => {
-		if(matchMap.has(v)) 
-		{
+	const nsSet = new Set()
+	neverSeen.forEach(v => nsSet.add(v))
+	let count = 0
+	let answer = []
+	nhSet.forEach(v =>{
+		if(nsSet.has(v)){
+			count++
 			answer.push(v)
 		}
 	})
-	answer.sort((a, b) => a - b)
-	console.log(answer.length)
+	console.log(count)
 	console.log(answer.join("\n"))
 })
