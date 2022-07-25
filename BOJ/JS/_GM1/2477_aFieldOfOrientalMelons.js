@@ -34,12 +34,12 @@ require('readline').createInterface(process.stdin, process.stdout)
 			}
 		}
 	}
-	// let minWidth = idx + 2
-	// let minHeight = idx + 3
-	// if(minWidth > 5) minWidth -= 6
-	// if(minHeight > 5) minHeight -= 6
-	// minWidth = arr[minWidth][1]
-	// minHeight = arr[minHeight][1]
+	let minWidth = idx + 2
+	let minHeight = idx + 3
+	if(minWidth > 5) minWidth -= 6
+	if(minHeight > 5) minHeight -= 6
+	minWidth = arr[minWidth][1]
+	minHeight = arr[minHeight][1]
 
-	// console.log(((maxWidth * maxHeight) - (minWidth * minHeight)) * K)
+	console.log(((maxWidth * maxHeight) - (minWidth * minHeight)) * K)
 })
