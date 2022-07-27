@@ -10,6 +10,8 @@ require('readline').createInterface(process.stdin, process.stdout)
 		let answer = 0
 		for(let x of str)
 		{
+			// let num = x.charCodeAt()
+			// if(num >= 65 && num <= 90) answer++ // 아스키 코드로 확인
 			if(x === x.toUpperCase()) answer++
 		}
 
