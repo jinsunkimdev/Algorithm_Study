@@ -8,13 +8,16 @@ require('readline').createInterface(process.stdin, process.stdout)
 	const  N = input.shift()
 	const numArr = input[0].split(' ').map(Number)
 	const solution = (arr) => {
-		let answer
-		// for(let i = 0; i < numArr.length; i++)
-		// {
-		// 	console.log(indexOf)
-		// }
-		return console.log( arr.indexOf(v,i) )	
-		// return answer
+		let n = arr.length
+		let answer = Array.from({length:n}, () => 1) // array 초기화
+		for(let i = 0; i < n; i++)
+		{
+			for(let j = 0; j < n; j++)
+			{
+				if(arr[j] > arr[i]) answer[i]++
+			}
+		}
+		return answer
 	}
 	console.log( solution(numArr) )
 })
