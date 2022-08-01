@@ -8,7 +8,10 @@ require('readline').createInterface(process.stdin, process.stdout)
 	const solution = (str) => {
 		let answer = "YES"
 		str = str.toLowerCase()
-		let strArr = str.replace(/[^a-zA-Z ]/g, '')		
+		let strArr = str.replace(/[^a-z]/g, '')		
+		/**
+		 * if(str.split('').reverse().join('') !== str) return "NO"
+		 */
 		for(let i = 0; i < Math.floor( strArr.length / 2); i++)
 		{
 			if(strArr[i] !== strArr[strArr.length - i - 1]) return "NO"
