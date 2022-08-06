@@ -18,14 +18,21 @@ require('readline').createInterface(process.stdin, process.stdout)
 	}
 	const solution = (arr) => {
 		let answer = []
-		let strArr = []
 		for(let x of arr)
 		{
-			strArr.push(x.toString().split('').reverse().join(''))
-		}
-		for(let x of strArr)
-		{
-			if(isPrime(+x)) answer.push(+x)
+			let tmp = 0
+			// get reverse string
+			tmp = parseInt(x.toString().split('').reverse().join(''))
+			/**
+			 * let res = 0
+			 * while(x) 
+			 * {
+			 *	let t = x % 10
+				res = res * 10 + t
+				x = parseInt(x / 10)
+			 * }
+			 */
+			if(isPrime(tmp)) answer.push(tmp)
 		}
 		return answer
 	}
