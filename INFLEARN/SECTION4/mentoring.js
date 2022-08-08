@@ -1,4 +1,11 @@
 // 멘토링
+/**
+ * input
+ * 4 3
+3 4 1 2
+4 3 2 1
+3 1 4 2
+ */
 let input = []
 require('readline').createInterface(process.stdin, process.stdout)
 .on('line', (line) => {
