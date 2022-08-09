@@ -20,19 +20,19 @@ require('readline').createInterface(process.stdin, process.stdout)
 		let nArr = input.shift().split(' ').map(Number)
 		const M = Number( input.shift() )
 		let mArr = input.shift().split(' ').map(Number)
-		let p1= 0
+		let p1 = p2 = 0
 		nArr.sort((a, b) => a - b)
 		mArr.sort((a, b) => a - b)
-		while(p1 < N)
+		while(p1 < nArr.length && p2 < mArr.length)
 		{
-			if(nArr[p1] == mArr[p1]) 
-			{ 
-			  answer.push(nArr[p1])
-			  console.log(answer)
+			if(nArr[p1] === mArr[p2])
+			{
+				answer.push(nArr[p1++])
+				p2++
 			}
-			  p1+=1 
+			else if(nArr[p1] < mArr[p2]) p1++
+			else p2++
 		}
-		console.log(answer)
 		return answer
 	}
 	console.log( solution(input) )
