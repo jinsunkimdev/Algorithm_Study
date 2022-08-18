@@ -15,18 +15,16 @@ require('readline').createInterface(process.stdin, process.stdout)
 	const solution = (input) => {
 		const [N, M] = input.shift().split(' ').map(Number)
 		let nArr = input.shift().split(' ').map(Number)
-		let answer = []
-		let p1 = p2 = 0
-		while(p1 < nArr.length)
+		let answer = 0
+		let lt = sum = 0
+		for(let rt = 0; rt < nArr.length; rt++)
 		{
-			if(nArr[p1] + nArr[p2] !== M)
+			sum += nArr[rt]
+			if(sum === M) answer++
+			while(sum >= M)
 			{
-				p2++
-			}
-			if(nArr[p1] + nArr[p2] === M)
-			{
-				answer.push(nArr[p1] + nArr[p2])
-				p1++
+				sum -= nArr[lt++]
+				if(sum === M) answer++
 			}
 		}
 		return answer
