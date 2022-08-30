@@ -14,24 +14,24 @@ require('readline').createInterface(process.stdin, process.stdout)
 	input.push(line.trim())
 })
 .on('close', () => {
-	const solution = (input) => {
-		let answer
 		const N = Number( input.shift() )
 		let nArr = input.shift().split(' ').map(Number)
 		const M = Number(input.shift())
 		let mArr = input.shift().split(' ').map(Number)
-		let tmpArr = []
+	const solution = (n, m) => {
+		let answer = []
+		n.sort((a,b) => a - b)
+		m.sort((a,b) => a - b)
 		let p1 = p2 = 0
-		while(p1 < N && p2 < M)
+		while(p1 < n.length && p2 < m.length)
 		{
-			if(nArr[p1] <= mArr[p2]) tmpArr.push(nArr[p1++])
-			else tmpArr.push(mArr[p2++])
+			if(n[p1] <= m[p2]) answer.push(n[p1++])
+			else answer.push(m[p2++])
 		}
-		while(p1 < N) tmpArr.push(nArr[p1++])
-		while(p2 < M) tmpArr.push(mArr[p2++])
-		console.log(tmpArr)
-		// const arr1 = nArr.concat(mArr)
-		// return answer = arr1.sort((a, b) => a - b)
+		console.log(p1, p2)
+		while(p1 < n.length) answer.push(n[p1++])
+		while(p2 < m.length) answer.push(m[p2++])
+		return answer
 	}
-	console.log( solution(input) )
+	console.log( solution(nArr, mArr) )
 })
