@@ -14,7 +14,7 @@ require('readline').createInterface(process.stdin, process.stdout)
 		{
 			sum += arr[rt]
 			while(sum > m)
-			{
+			{ 
 				sum -= arr[lt++]
 			}
 			answer += (rt - lt + 1)

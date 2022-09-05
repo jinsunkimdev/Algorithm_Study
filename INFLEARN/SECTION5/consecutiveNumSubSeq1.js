@@ -12,22 +12,22 @@ require('readline').createInterface(process.stdin, process.stdout)
 	input.push(line.trim())
 })
 .on('close', () => {
-	const solution = (input) => {
-		const [N, M] = input.shift().split(' ').map(Number)
-		let nArr = input.shift().split(' ').map(Number)
+	const [N, M] = input.shift().split(' ').map(Number)
+	let nArr = input.shift().split(' ').map(Number)
+	const solution = (m, arr) => {
 		let answer = 0
-		let lt = sum = 0
-		for(let rt = 0; rt < nArr.length; rt++)
+		let lt = rt = sum = 0
+		for(let rt = 0; rt < arr.length; rt++)
 		{
-			sum += nArr[rt]
-			if(sum === M) answer++
-			while(sum >= M)
+			sum+=arr[rt]
+			if(sum === m) answer++
+			while(sum >= m)
 			{
-				sum -= nArr[lt++]
-				if(sum === M) answer++
+				sum -= arr[lt++]
+				if(sum === m) answer++
 			}
 		}
 		return answer
 	}
-	console.log( solution(input) )
+	console.log( solution(M, nArr) )
 })
