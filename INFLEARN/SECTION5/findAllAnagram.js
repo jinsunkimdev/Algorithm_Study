@@ -39,9 +39,14 @@ require('readline').createInterface(process.stdin, process.stdout)
 		let lt = 0
 		for(let rt = len; rt < S.length; rt++)
 		{
-			// if(sH.has(s[rt])) sH.set(s[rt].)
+			if(sH.has(s[rt])) sH.set(s[rt], sH.get(s[rt]) + 1)
+			else sH.set(s[rt], 1)
+			if(compareMaps(tH, sH)) answer++
+			sH.set(s[lt], sH.get(s[lt]) - 1)
+			if(sH.get(s[lt]) === 0) sH.delete(s[lt])
+			lt++
 		}
-		console.log(sH)
+
 		// let lt = 0
 		// for(let rt = len; rt < s.length; rt++)
 		// {

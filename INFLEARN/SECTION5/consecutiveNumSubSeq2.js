@@ -13,13 +13,27 @@ require('readline').createInterface(process.stdin, process.stdout)
 		for(let rt = 0; rt < arr.length; rt++)
 		{
 			sum += arr[rt]
-			while(sum > m)
-			{ 
+			if(rt >= m - 1)
+			{
+				answer = Math.max(answer, sum)
 				sum -= arr[lt++]
 			}
-			answer += (rt - lt + 1)
 		}
 		return answer
+		// let answer = 0
+		// let sum = 0
+		// let lt = rt = 0
+		// for(let rt = 0; rt < arr.length; rt++)
+		// {
+		// 	sum += arr[rt]
+		// 	while(sum > m)
+		// 	{ 
+		// 		sum -= arr[lt++]
+		// 	}
+		// 	answer += (rt - lt + 1)
+		// 	console.log(rt, lt, answer)
+		// }
+		// return answer
 	}
 	console.log( solution(M, nArr) )
 })
