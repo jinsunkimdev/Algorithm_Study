@@ -12,6 +12,7 @@ require('readline').createInterface(process.stdin, process.stdout)
 		input = input.split('')
 		let answer = []
 		let stack = []
+		stack.push(1)
 		// for(let i = 0; i < input.length; i++)
 		// {
 		// 	if(input[i] === "(") stack.push("(")
@@ -27,7 +28,7 @@ require('readline').createInterface(process.stdin, process.stdout)
 				stack.push(input[i])
 			}
 			if(input[i] === ')')
-			{
+			{ 
 				stack.pop()
 			}
 			if(stack.length === 0 && input[i] !== ')') answer.push(input[i])
