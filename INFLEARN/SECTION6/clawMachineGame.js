@@ -24,7 +24,10 @@ const solution = (board, moves) => {
 				{
 					stack.pop()
 					answer += 2
-				}else stack.push(tmp)
+					console.log("stack pop!")
+				}else { 
+					stack.push(tmp)
+				console.log("stack push!") }
 				break
 			}
 		}
