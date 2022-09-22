@@ -12,6 +12,19 @@ require('readline').createInterface(process.stdin, process.stdout)
 	input.push(line.trim())
 }).on('close', () => {
 	let nArr = input[1].split(' ').map(x => Number(x))
+	// const solution = (arr) => {
+	// 	let answer = arr
+	// 	for (let i = 0; i < answer.length - 1; i++) {
+	// 		let idx = i
+	// 		for (let j = i + 1; j < answer.length; j++) {
+	// 			if (answer[j] < answer[idx]) idx = j
+	// 		}
+	// 		[answer[i], answer[idx]] = [answer[idx], answer[i]]
+	// 	}
+	// 	return answer
+	// }
+	// console.log( solution(nArr).join(' ') )
+	// })
 	const solution = (arr) => {
 		let answer
 		for(let i = 0; i < arr.length; i++)
@@ -30,7 +43,7 @@ require('readline').createInterface(process.stdin, process.stdout)
 		answer = arr
 		return answer
 	}
-	console.log(solution(nArr))
-})
+		console.log(solution(nArr))
+	})
 
 
